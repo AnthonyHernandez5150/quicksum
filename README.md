@@ -1,50 +1,71 @@
-# ai-notes-flask README
+# QuickSum
 
-# AI Notes Flask
+QuickSum is a Flask web app for AI-powered note summarization. Users can register, log in, create notes, and get concise AI-generated summaries. Features include user profiles, profile pictures, dark mode, and more.
 
-This is a Flask backend application for the AI Notes project, which provides user authentication and a simple dashboard interface. The backend connects to a SQLite database and exposes RESTful API endpoints for user registration and login.
+## Features
 
-## Project Structure
+- User registration and login (secure password hashing)
+- AI-powered note summarization (OpenRouter API)
+- Edit and delete notes
+- User profile with bio and profile picture upload
+- Dark mode toggle
+- Responsive Bootstrap UI
 
-- `app.py`: Main application entry point, initializes the Flask app and sets up routes.
-- `auth.py`: Contains authentication routes for user registration and login.
-- `models.py`: Defines the User model for the SQLite database.
-- `db.py`: Sets up the SQLite database connection and initializes the database schema.
-- `requirements.txt`: Lists the dependencies required for the Flask application.
-- `templates/`: Contains HTML templates for the application, including login, registration, and dashboard views.
+## Setup
 
-## Setup Instructions
-
-1. **Clone the repository:**
-   ```
-   git clone <repository-url>
-   cd ai-notes-flask
+1. **Clone this repo:**
+   ```sh
+   git clone https://github.com/YOUR_USERNAME/quicksum.git
+   cd quicksum
    ```
 
-2. **Create a virtual environment:**
-   ```
+2. **Create a virtual environment (optional but recommended):**
+   ```sh
    python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   venv\Scripts\activate  # On Windows
+   # or
+   source venv/bin/activate  # On Mac/Linux
    ```
 
 3. **Install dependencies:**
-   ```
+   ```sh
    pip install -r requirements.txt
    ```
 
-4. **Run the application:**
+4. **Set up your environment variables:**
+   - Copy `.env.example` to `.env`
+   - Get your own [OpenRouter API key](https://openrouter.ai/)
+   - Add it to your `.env` file:
+     ```
+     OPENROUTER_API_KEY=your_openrouter_api_key_here
+     ```
+
+5. **Initialize the database:**
+   ```sh
+   flask db upgrade
    ```
-   python app.py
+
+6. **Run the app:**
+   ```sh
+   flask run
    ```
+   The app will be available at [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
-5. **Access the API:**
-   The API will be available at `http://localhost:5000/api`.
+## Deployment
 
-## API Endpoints
+You can deploy this app to [Render](https://render.com/), [Railway](https://railway.app/), [Fly.io](https://fly.io/), or [Heroku](https://heroku.com/).  
+Make sure to set your environment variables and use a production-ready database.
 
-- `POST /api/register`: Register a new user.
-- `POST /api/login`: Log in an existing user.
+## Security
+
+- **Never share your `.env` file or API keys.**
+- Passwords are securely hashed.
+- Profile pictures are stored in `static/profile_pics`.
 
 ## License
 
-This project is licensed under the MIT License.
+MIT
+
+---
+
+**Built with ❤️ using Flask and OpenRouter AI.**
