@@ -1,0 +1,88 @@
+/* Default (light) theme */
+body, .app-container {
+    background: #f8f9fa;
+    color: #222;
+}
+.card, .note-card {
+    background: #fff;
+    color: #222;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* Dark theme */
+body.dark-mode, .app-container.dark-mode {
+    background: #181a1b !important;
+    color: #f1f1f1 !important;
+}
+body.dark-mode .card,
+body.dark-mode .note-card {
+    background: #23272b !important;
+    color: #f1f1f1 !important;
+}
+body.dark-mode .app-header,
+body.dark-mode .app-footer {
+    background: #23272b;
+    color: #f1f1f1;
+}
+body.dark-mode .alert {
+    background: #23272b;
+    color: #f1f1f1;
+}
+body.dark-mode .form-control {
+    background-color: #23272b !important;
+    color: #f1f1f1 !important;
+    border-color: #444 !important;
+}
+body.dark-mode input.form-control,
+body.dark-mode textarea.form-control,
+body.dark-mode select.form-control {
+    background-color: #23272b !important;
+    color: #f1f1f1 !important;
+    border-color: #444 !important;
+}
+
+body.dark-mode .form-control::placeholder {
+    color: #bbb !important;
+    opacity: 1;
+}
+body.dark-mode input.form-control::placeholder,
+body.dark-mode textarea.form-control::placeholder {
+    color: #bbb !important;
+    opacity: 1;
+}
+body.dark-mode .list-group-item {
+    background-color: #23272b !important;
+    color: #f1f1f1 !important;
+    border-color: #444 !important;
+}
+
+body.dark-mode .btn-danger {
+    background-color: #bb2d3b !important;
+    border-color: #a71d2a !important;
+    color: #fff !important;
+}
+.theme-toggle {
+    float: right;
+    margin-left: 1rem;
+}
+
+/* Force dark mode on autofill, focus, and active states */
+body.dark-mode input.form-control:-webkit-autofill,
+body.dark-mode input.form-control:-webkit-autofill:focus,
+body.dark-mode input.form-control:focus,
+body.dark-mode input.form-control:active,
+body.dark-mode textarea.form-control:focus,
+body.dark-mode textarea.form-control:active {
+    background-color: #23272b !important;
+    color: #f1f1f1 !important;
+    border-color: #444 !important;
+    -webkit-box-shadow: 0 0 0 1000px #23272b inset !important;
+    box-shadow: 0 0 0 1000px #23272b inset !important;
+    caret-color: #f1f1f1 !important;
+}
+
+body.dark-mode input.form-control:-webkit-autofill {
+    -webkit-text-fill-color: #f1f1f1 !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
